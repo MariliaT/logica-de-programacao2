@@ -1,0 +1,45 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+	
+	// function desenhaCoracao() {
+
+	// pincel.fillStyle = 'red';
+	//pincel.beginPath();
+  	//pincel.moveTo(75,40);
+	//pincel.bezierCurveTo(75,37,70,25,50,25);
+	//pincel.bezierCurveTo(20,25,20,62.5,20,62.5);
+	//pincel.bezierCurveTo(20,80,40,102,75,120);
+	//pincel.bezierCurveTo(110,102,130,80,130,62.5);
+    //pincel.bezierCurveTo(130,62.5,130,25,100,25);
+    //pincel.bezierCurveTo(85,25,75,37,75,40);
+    //pincel.fill();
+	
+	//} 
+	
+	var cor = Math.random('cor');
+	
+	function desenhaCarinhaFeliz() {
+	
+	pincel.fillStyle = cor;
+	pincel.beginPath();
+    pincel.arc(300, 200, 50, 0, Math.PI * 2, true); // Círculo exterior
+	pincel.fill();
+    pincel.moveTo(110, 75);
+    pincel.arc(300, 200, 20, 0, Math.PI, false);  // Boca (sentido horário)
+    pincel.moveTo(65, 65);
+    pincel.arc(60, 65, 5, 0, Math.PI * 2, true);  // Olho esquerdo
+    pincel.moveTo(95, 65);
+    pincel.arc(90, 65, 5, 0, Math.PI * 2, true);  // Olho direito
+    pincel.stroke();
+
+	}
+	
+	desenhaCarinhaFeliz();
+	
+</script>
